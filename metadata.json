@@ -1,0 +1,6 @@
+{
+  "name": "Whack-a-Waffle Cat",
+  "description": "Whack-a-Waffle Cat: Monochrome Pixel Edition - Retro 1-bit arcade reflex game where you catch waffle cats and hunt the special green cat for extra lives.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

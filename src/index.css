@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-pixel: 'Press Start 2P', monospace, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-pixel);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
+
+/* Custom retro pixel shadows & borders */
+.pixel-box {
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.pixel-box-dark {
+  box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 1);
+}
+
+.pixel-box-green {
+  box-shadow: 4px 4px 0px 0px #16a34a;
+}
+
+.pixel-box-sm {
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.pixel-box-sm-dark {
+  box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 1);
+}
+
+/* Active button press effect */
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px currentColor;
+}
+
+/* Screen hit flash effect when life lost */
+@keyframes screen-hurt-flash {
+  0% {
+    box-shadow: inset 0 0 0 8px #ef4444;
+  }
+  100% {
+    box-shadow: inset 0 0 0 0px transparent;
+  }
+}
+
+.animate-hurt {
+  animation: screen-hurt-flash 0.35s ease-out;
+}
+
+/* Screen life gained flash */
+@keyframes screen-heal-flash {
+  0% {
+    box-shadow: inset 0 0 0 8px #22c55e;
+  }
+  100% {
+    box-shadow: inset 0 0 0 0px transparent;
+  }
+}
+
+.animate-heal {
+  animation: screen-heal-flash 0.35s ease-out;
+}
+
+/* Life bar indicator shrink */
+@keyframes shrinkWidth {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Custom Pixelated Mallet Cursor for the game Arena */
+.arena-cursor {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23000' d='M8 4h12v8H8z'/%3E%3Cpath fill='%23fff' d='M10 6h8v4h-8z'/%3E%3Cpath fill='%23000' d='M12 12h4v14h-4z'/%3E%3Cpath fill='%23fff' d='M13 14h2v10h-2z'/%3E%3C/svg%3E") 12 8, crosshair;
+}
+
+.arena-cursor-dark {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23fff' d='M8 4h12v8H8z'/%3E%3Cpath fill='%23000' d='M10 6h8v4h-8z'/%3E%3Cpath fill='%23fff' d='M12 12h4v14h-4z'/%3E%3Cpath fill='%23000' d='M13 14h2v10h-2z'/%3E%3C/svg%3E") 12 8, crosshair;
+}
